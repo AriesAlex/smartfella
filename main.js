@@ -26,7 +26,7 @@ async function gen(prompt, examples = [], generateCode, log, runCode) {
     func = await runCode(`(${code})`)
   } catch (e) {
     log('Error while running code, regenereting it', e)
-    return await gen(prompt, examples)
+    return await gen(prompt, examples, generateCode, log, runCode)
   }
 
   for (const example of examples) {
@@ -41,11 +41,11 @@ async function gen(prompt, examples = [], generateCode, log, runCode) {
             actualResult
           )} (${typeof JSON.stringify(example.result)})`
         )
-        return gen(prompt, examples)
+        return gen(prompt, examples, generateCode, log, runCode)
       }
     } catch (e) {
       log('testing example failed, regenereting.', e)
-      return gen(prompt, examples)
+      return gen(prompt, examples, generateCode, log, runCode)
     }
   }
 
