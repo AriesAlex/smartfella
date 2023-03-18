@@ -8,7 +8,7 @@ const generatedFileName =
   '/smartfella_generated.json'
 if (!fs.existsSync(generatedFileName)) fs.writeFileSync(generatedFileName, '{}')
 
-async function gen(prompt, examples = [], generateCode, log, runCode) {
+async function gen(prompt, examples, generateCode, log, runCode) {
   const generated = fs.readJSONSync(generatedFileName)
   const generatedKey = prompt + JSON.stringify(examples)
 
@@ -106,9 +106,10 @@ module.exports = (options = defaultOptions) => {
   const defaultGenerateCode = prompt =>
     generateCode(prompt, options.openaiApiKey)
 
-  return async (...args) =>
+  return async (prompt, examples = []) =>
     await gen(
-      ...args,
+      prompt,
+      examples,
       options.customGenerateCode || defaultGenerateCode,
       options.enableLogs ? log : () => {},
       options.autoInstallModules ? runCode : code => runCode(code, false)
