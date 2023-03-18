@@ -1,13 +1,16 @@
 {
   "name": "smartfella",
   "version": "1.0.0",
-  "description": "",
+  "description": "AI Functions Generator. Pass prompt and examples(that also tests) and AI will generate you function for that!",
   "main": "main.js",
-  "scripts": {
-  },
+  "author": "ArieX",
   "keywords": [],
-  "author": "",
   "license": "ISC",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AriesAlex/smartfella.git"
+  },
   "dependencies": {
     "chalk": "^4.1.0",
     "fetch": "^1.1.0",
