@@ -1,6 +1,6 @@
 {
   "name": "smartfella",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "AI Functions Generator. Pass prompt and examples(that also tests) and AI will generate you function for that!",
   "main": "main.js",
   "author": "ArieX",
