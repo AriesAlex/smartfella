@@ -4,7 +4,7 @@
 
 ## Example
 
-![Example](docs/example.svg)
+![Example](docs/example.png)
 
 ## Features
 
